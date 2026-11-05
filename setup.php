@@ -57,7 +57,7 @@ require_once __DIR__ . '/includes/navbar.php';
                 </div>
                 <div>
                     <h1 class="text-xl font-bold">System Installation & Diagnostic</h1>
-                    <p class="text-xs text-slate-400 mt-0.5">Software Engineering Lab Project v1.0 • Yana Sareen (2427030570)</p>
+                    <p class="text-xs text-slate-400 mt-0.5">Software Engineering Lab Project v1.0 • Yana Sareen (2427030570) &amp; Kumar Sambhav Singh Rathore (2427030694)</p>
                 </div>
             </div>
             <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">

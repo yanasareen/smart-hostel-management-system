@@ -2,7 +2,7 @@
 -- SOFTWARE REQUIREMENTS SPECIFICATION (SRS)
 -- SMART HOSTEL COMPLAINT MANAGEMENT SYSTEM - DATABASE SCHEMA
 -- Version: 1.0
--- Prepared by: Yana Sareen (Registration Number: 2427030570)
+-- Prepared by: Yana Sareen (Registration Number: 2427030570) & Kumar Sambhav Singh Rathore (Registration Number: 2427030694)
 -- Software Engineering Laboratory Project
 -- Compatible with MySQL 5.7+ / MariaDB 10.4+ (XAMPP default)
 -- ============================================================================

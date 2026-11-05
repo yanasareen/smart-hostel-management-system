@@ -15,7 +15,7 @@
             </div>
             <div class="text-center md:text-right">
                 <p>Software Engineering Laboratory Project</p>
-                <p class="text-slate-400 mt-0.5">Designed & Developed by <strong>Yana Sareen</strong> (Reg No: <strong>2427030570</strong>)</p>
+                <p class="text-slate-400 mt-0.5">Designed & Developed by <strong>Yana Sareen</strong> (Reg No: <strong>2427030570</strong>) &amp; <strong>Kumar Sambhav Singh Rathore</strong> (Reg No: <strong>2427030694</strong>)</p>
             </div>
         </div>
         <div class="mt-4 pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-2 text-[11px] text-slate-400">

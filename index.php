@@ -319,9 +319,17 @@ require_once __DIR__ . '/includes/navbar.php';
                     <p class="text-xs text-blue-300 mt-1">Smart Hostel Complaint Management System • Version 1.0</p>
                 </div>
                 <div class="text-left sm:text-right">
-                    <p class="text-xs text-slate-400">Student Developer</p>
-                    <p class="font-bold text-white text-sm">Yana Sareen</p>
-                    <p class="text-xs text-slate-400">Registration Number: <strong class="text-blue-300">2427030570</strong></p>
+                    <p class="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-1">Student Developers</p>
+                    <div class="space-y-1">
+                        <div>
+                            <span class="font-bold text-white text-sm">Yana Sareen</span>
+                            <span class="text-xs text-slate-400 ml-1">(Reg: <strong class="text-blue-300">2427030570</strong>)</span>
+                        </div>
+                        <div>
+                            <span class="font-bold text-white text-sm">Kumar Sambhav Singh Rathore</span>
+                            <span class="text-xs text-slate-400 ml-1">(Reg: <strong class="text-blue-300">2427030694</strong>)</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 

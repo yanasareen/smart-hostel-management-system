@@ -7,7 +7,7 @@ define('SMART_HOSTEL_CONFIG_LOADED', true);
 /**
  * Smart Hostel Complaint Management System
  * Software Engineering Laboratory Project
- * Prepared by: Yana Sareen (Reg: 2427030570)
+ * Prepared by: Yana Sareen (Reg: 2427030570) & Kumar Sambhav Singh Rathore (Reg: 2427030694)
  * Version: 1.0
  */
 

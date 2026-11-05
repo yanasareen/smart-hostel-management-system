@@ -1,7 +1,7 @@
 /**
  * Smart Hostel Complaint Management System
  * Core Client-side Interactions & Smart Features
- * Yana Sareen - Software Engineering Laboratory Project
+ * Yana Sareen & Kumar Sambhav Singh Rathore - Software Engineering Laboratory Project
  */
 
 document.addEventListener('DOMContentLoaded', () => {

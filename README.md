@@ -9,8 +9,9 @@
 
 **Software Requirements Specification (SRS) Implementation**  
 **Software Engineering Laboratory Project**  
-**Student Developer:** Yana Sareen  
-**Registration Number:** 2427030570  
+**Student Developers:**  
+- **Yana Sareen** (Registration Number: 2427030570)  
+- **Kumar Sambhav Singh Rathore** (Registration Number: 2427030694)  
 **Course:** Software Engineering Laboratory  
 
 ---
@@ -175,4 +176,4 @@ se hostel management/
 ---
 
 ## 📝 Academic Compliance
-This project satisfies all conditions outlined in the IEEE Software Requirements Specification (SRS) for the Software Engineering Laboratory Project by Yana Sareen (Reg: 2427030570).
+This project satisfies all conditions outlined in the IEEE Software Requirements Specification (SRS) for the Software Engineering Laboratory Project by Yana Sareen (Reg: 2427030570) and Kumar Sambhav Singh Rathore (Reg: 2427030694).
