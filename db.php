@@ -12,9 +12,46 @@ function get_db() {
         return $pdo;
     }
 
-    $db_type = 'sqlite';
+    $configured_type = strtolower(defined('DB_TYPE') ? DB_TYPE : (getenv('DB_TYPE') ?: 'auto'));
 
-    // 1. Try XAMPP macOS MySQL socket first (standard for local XAMPP Apache)
+    // 1. If explicitly configured to SQLite, skip MySQL attempts
+    if ($configured_type === 'sqlite') {
+        $sqlite_file = __DIR__ . '/smart_hostel.sqlite';
+        $pdo = new PDO("sqlite:" . $sqlite_file, null, null, [
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+        ]);
+        $pdo->exec("PRAGMA foreign_keys = ON;");
+        initialize_database_if_needed($pdo, 'sqlite');
+        return $pdo;
+    }
+
+    // 2. Try DATABASE_URL / JAWSDB_URL / CLEARDB_DATABASE_URL (common in Railway/Heroku/Render)
+    $db_url = getenv('DATABASE_URL') ?: (getenv('JAWSDB_URL') ?: getenv('CLEARDB_DATABASE_URL'));
+    if ($db_url) {
+        $parsed = parse_url($db_url);
+        if ($parsed && isset($parsed['host'])) {
+            $host = $parsed['host'];
+            $port = $parsed['port'] ?? 3306;
+            $user = $parsed['user'] ?? DB_USER;
+            $pass = $parsed['pass'] ?? DB_PASS;
+            $name = ltrim($parsed['path'] ?? DB_NAME, '/');
+            try {
+                $pdo = new PDO("mysql:host=$host;port=$port;dbname=$name;charset=utf8mb4", $user, $pass, [
+                    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+                    PDO::ATTR_EMULATE_PREPARES => false,
+                    PDO::ATTR_TIMEOUT => 3
+                ]);
+                initialize_database_if_needed($pdo, 'mysql');
+                return $pdo;
+            } catch (Throwable $e) {
+                // fall through to other attempts
+            }
+        }
+    }
+
+    // 3. Try local XAMPP macOS MySQL socket
     $socket_path = '/Applications/XAMPP/xamppfiles/var/mysql/mysql.sock';
     if (file_exists($socket_path)) {
         try {
@@ -23,14 +60,14 @@ function get_db() {
                 PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
                 PDO::ATTR_EMULATE_PREPARES => false,
             ]);
-            $db_type = 'mysql';
+            initialize_database_if_needed($pdo, 'mysql');
             return $pdo;
         } catch (Throwable $e) {
             // Continue to TCP attempt
         }
     }
 
-    // 2. Try TCP connection to MySQL (127.0.0.1:3306)
+    // 4. Try standard TCP connection to MySQL
     try {
         $pdo = new PDO("mysql:host=" . DB_HOST . ";port=" . DB_PORT . ";dbname=" . DB_NAME . ";charset=utf8mb4", DB_USER, DB_PASS, [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
@@ -38,7 +75,7 @@ function get_db() {
             PDO::ATTR_EMULATE_PREPARES => false,
             PDO::ATTR_TIMEOUT => 2
         ]);
-        $db_type = 'mysql';
+        initialize_database_if_needed($pdo, 'mysql');
         return $pdo;
     } catch (Throwable $e) {
         // Fallback to SQLite if MySQL is not reachable
@@ -48,13 +85,9 @@ function get_db() {
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
         ]);
         $pdo->exec("PRAGMA foreign_keys = ON;");
-        $db_type = 'sqlite';
+        initialize_database_if_needed($pdo, 'sqlite');
+        return $pdo;
     }
-
-    // Initialize tables if needed
-    initialize_database_if_needed($pdo, $db_type);
-
-    return $pdo;
 }
 
 function get_db_driver() {

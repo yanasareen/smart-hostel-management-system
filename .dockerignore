@@ -1,0 +1,5 @@
+.git
+.gitignore
+.DS_Store
+*.pdf
+sync_to_xampp.sh

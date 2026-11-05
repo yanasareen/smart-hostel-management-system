@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: smart-hostel-management
+    env: docker
+    plan: free
+    region: oregon
+    dockerfilePath: Dockerfile
+    envVars:
+      - key: DB_TYPE
+        value: sqlite

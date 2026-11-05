@@ -1,0 +1,15 @@
+# Apache configuration for Smart Hostel Management System
+DirectoryIndex index.php
+
+# Prevent directory browsing
+Options -Indexes +FollowSymLinks
+
+# Deny access to sensitive database and log files
+<FilesMatch "\.(sqlite|sqlite3|sql|log|sh)$">
+    Require all denied
+</FilesMatch>
+
+# Deny access to hidden files and folders (.git, .sessions, etc.)
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>

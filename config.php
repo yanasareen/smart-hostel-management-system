@@ -36,12 +36,13 @@ define('HOSTEL_NAME', 'Apex University Smart Residence');
 define('HOSTEL_ADDRESS', 'Academic Campus, Knowledge Park, Pin: 110044');
 define('CURRENCY_SYMBOL', '₹');
 
-// Database configuration (Standard XAMPP default)
-define('DB_HOST', '127.0.0.1');
-define('DB_PORT', '3306');
-define('DB_NAME', 'smart_hostel');
-define('DB_USER', 'root');
-define('DB_PASS', '');
+// Database configuration (Standard XAMPP default with Cloud Environment Variable support)
+define('DB_HOST', getenv('DB_HOST') ?: '127.0.0.1');
+define('DB_PORT', getenv('DB_PORT') ?: '3306');
+define('DB_NAME', getenv('DB_NAME') ?: 'smart_hostel');
+define('DB_USER', getenv('DB_USER') ?: 'root');
+define('DB_PASS', getenv('DB_PASS') !== false ? getenv('DB_PASS') : '');
+define('DB_TYPE', getenv('DB_TYPE') ?: 'auto'); // 'auto', 'mysql', or 'sqlite'
 
 // Complaint SLA escalation thresholds in hours (TBD-01 in SRS)
 define('ESCALATION_HIGH_HOURS', 24);    // High priority escalates after 24 hours
