@@ -153,7 +153,7 @@ if (current_user_role() === 'student') {
                     </td>
                     <td class="p-3"><?= htmlspecialchars($receipt['semester']) ?></td>
                     <td class="p-3 text-right font-mono font-bold text-slate-900">
-                        <?= CURRENCY_SYMBOL ?><?= number_format($receipt['amount'], 2) ?>
+                        <?= APP_CURRENCY ?><?= number_format($receipt['amount'], 2) ?>
                     </td>
                 </tr>
             </tbody>
@@ -161,7 +161,7 @@ if (current_user_role() === 'student') {
                 <tr>
                     <td colspan="3" class="p-3 text-right uppercase text-slate-700">Total Amount Paid:</td>
                     <td class="p-3 text-right text-base text-slate-900 font-black">
-                        <?= CURRENCY_SYMBOL ?><?= number_format($receipt['amount'], 2) ?>
+                        <?= APP_CURRENCY ?><?= number_format($receipt['amount'], 2) ?>
                     </td>
                 </tr>
             </tfoot>

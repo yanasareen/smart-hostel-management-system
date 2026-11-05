@@ -38,13 +38,13 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST' && isset($_POST['action']) 
             create_notification(
                 $st['user_id'], 
                 'Official Fee Receipt Issued', 
-                "Receipt #$receipt_number for " . CURRENCY_SYMBOL . number_format($amount, 2) . " ($fee_type) has been generated.", 
+                "Receipt #$receipt_number for " . APP_CURRENCY . number_format($amount, 2) . " ($fee_type) has been generated.", 
                 'success', 
                 'my_fees.php'
             );
         }
 
-        set_flash('success', "Payment of " . CURRENCY_SYMBOL . number_format($amount, 2) . " recorded successfully! Official Receipt #$receipt_number generated.");
+        set_flash('success', "Payment of " . APP_CURRENCY . number_format($amount, 2) . " recorded successfully! Official Receipt #$receipt_number generated.");
         header('Location: accountant_receipts.php');
         exit;
     }

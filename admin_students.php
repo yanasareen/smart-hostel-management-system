@@ -115,7 +115,7 @@ require_once __DIR__ . '/includes/navbar.php';
                                 <?= $st['complaint_count'] ?> ticket(s)
                             </td>
                             <td class="px-6 py-4 font-bold text-emerald-600">
-                                <?= CURRENCY_SYMBOL ?><?= number_format($st['total_paid'] ?: 0, 0) ?>
+                                <?= APP_CURRENCY ?><?= number_format($st['total_paid'] ?: 0, 0) ?>
                             </td>
                             <td class="px-6 py-4">
                                 <span class="badge-status <?= $st['status'] === 'Active Resident' ? 'badge-resolved' : 'badge-low' ?>">

@@ -1,4 +1,9 @@
 <?php
+if (defined('SMART_HOSTEL_DB_LOADED')) {
+    return;
+}
+define('SMART_HOSTEL_DB_LOADED', true);
+
 /**
  * Smart Hostel Complaint Management System
  * Database Abstraction Layer (XAMPP MySQL with Automatic Socket & SQLite Fallback)

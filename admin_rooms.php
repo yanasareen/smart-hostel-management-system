@@ -95,7 +95,7 @@ require_once __DIR__ . '/includes/navbar.php';
                     <div class="mt-4 pt-3 border-t border-slate-100 space-y-1.5 text-slate-600">
                         <p><strong>Floor:</strong> <?= $rm['floor'] ?> Floor</p>
                         <p><strong>Tier:</strong> <span class="text-blue-600 font-bold"><?= htmlspecialchars($rm['room_type']) ?></span></p>
-                        <p><strong>Fee:</strong> <?= CURRENCY_SYMBOL ?><?= number_format($rm['fee_per_semester'], 0) ?> / semester</p>
+                        <p><strong>Fee:</strong> <?= APP_CURRENCY ?><?= number_format($rm['fee_per_semester'], 0) ?> / semester</p>
                         <p><strong>Occupancy:</strong> <?= $rm['occupied_beds'] ?> / <?= $rm['capacity'] ?> Beds (<?= $vacant ?> free)</p>
                     </div>
 

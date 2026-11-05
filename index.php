@@ -293,7 +293,7 @@ require_once __DIR__ . '/includes/navbar.php';
                         </div>
                         <div class="flex justify-between text-slate-600">
                             <span>Semester Fee:</span>
-                            <strong class="text-blue-600 font-bold"><?= CURRENCY_SYMBOL ?><?= number_format($r['fee_per_semester'], 2) ?></strong>
+                            <strong class="text-blue-600 font-bold"><?= APP_CURRENCY ?><?= number_format($r['fee_per_semester'], 2) ?></strong>
                         </div>
                     </div>
 

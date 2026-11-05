@@ -1,4 +1,9 @@
 <?php
+if (defined('SMART_HOSTEL_CONFIG_LOADED')) {
+    return;
+}
+define('SMART_HOSTEL_CONFIG_LOADED', true);
+
 /**
  * Smart Hostel Complaint Management System
  * Software Engineering Laboratory Project
@@ -34,7 +39,10 @@ define('APP_SHORT_NAME', 'SmartHostel');
 define('APP_VERSION', '1.0');
 define('HOSTEL_NAME', 'Apex University Smart Residence');
 define('HOSTEL_ADDRESS', 'Academic Campus, Knowledge Park, Pin: 110044');
-define('CURRENCY_SYMBOL', '₹');
+define('APP_CURRENCY', '₹');
+if (!defined('CURRENCY_SYMBOL')) {
+    define('CURRENCY_SYMBOL', APP_CURRENCY);
+}
 
 // Database configuration (Standard XAMPP default with Cloud Environment Variable support)
 define('DB_HOST', getenv('DB_HOST') ?: '127.0.0.1');

@@ -148,7 +148,7 @@ require_once __DIR__ . '/includes/navbar.php';
                                     <td class="p-3"><?= htmlspecialchars($rec['student_name']) ?> (<?= htmlspecialchars($rec['reg_no']) ?>)</td>
                                     <td class="p-3 font-medium text-slate-800"><?= htmlspecialchars($rec['fee_type']) ?></td>
                                     <td class="p-3"><?= htmlspecialchars($rec['payment_mode']) ?></td>
-                                    <td class="p-3 font-bold text-emerald-600"><?= CURRENCY_SYMBOL ?><?= number_format($rec['amount'], 2) ?></td>
+                                    <td class="p-3 font-bold text-emerald-600"><?= APP_CURRENCY ?><?= number_format($rec['amount'], 2) ?></td>
                                     <td class="p-3 text-slate-500"><?= date('d M Y', strtotime($rec['created_at'])) ?></td>
                                 <?php endif; ?>
                             </tr>

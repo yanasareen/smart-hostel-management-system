@@ -67,7 +67,7 @@ require_once __DIR__ . '/includes/navbar.php';
             </div>
             <div>
                 <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Total Collections</span>
-                <p class="text-2xl font-black text-slate-900"><?= CURRENCY_SYMBOL ?><?= number_format($total_revenue, 2) ?></p>
+                <p class="text-2xl font-black text-slate-900"><?= APP_CURRENCY ?><?= number_format($total_revenue, 2) ?></p>
                 <span class="text-xs text-emerald-600 font-medium">Recorded & Verified</span>
             </div>
         </div>
@@ -89,7 +89,7 @@ require_once __DIR__ . '/includes/navbar.php';
             </div>
             <div>
                 <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Today's Collections</span>
-                <p class="text-2xl font-black text-amber-600"><?= CURRENCY_SYMBOL ?><?= number_format($today_collections, 2) ?></p>
+                <p class="text-2xl font-black text-amber-600"><?= APP_CURRENCY ?><?= number_format($today_collections, 2) ?></p>
                 <span class="text-xs text-slate-500"><?= date('d M Y') ?></span>
             </div>
         </div>
@@ -155,7 +155,7 @@ require_once __DIR__ . '/includes/navbar.php';
                             <td class="px-6 py-4 font-mono font-bold text-slate-900"><?= htmlspecialchars($rp['receipt_number']) ?></td>
                             <td class="px-6 py-4 font-semibold text-slate-800"><?= htmlspecialchars($rp['student_name']) ?> (<?= htmlspecialchars($rp['reg_no']) ?>)</td>
                             <td class="px-6 py-4"><?= htmlspecialchars($rp['fee_type']) ?></td>
-                            <td class="px-6 py-4 font-bold text-emerald-600"><?= CURRENCY_SYMBOL ?><?= number_format($rp['amount'], 2) ?></td>
+                            <td class="px-6 py-4 font-bold text-emerald-600"><?= APP_CURRENCY ?><?= number_format($rp['amount'], 2) ?></td>
                             <td class="px-6 py-4"><?= htmlspecialchars($rp['payment_mode']) ?></td>
                             <td class="px-6 py-4 text-slate-500"><?= date('d M Y', strtotime($rp['created_at'])) ?></td>
                             <td class="px-6 py-4 text-right">

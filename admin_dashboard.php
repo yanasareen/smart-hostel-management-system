@@ -112,7 +112,7 @@ require_once __DIR__ . '/includes/navbar.php';
             </div>
             <div>
                 <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Fee Collections</span>
-                <p class="text-2xl font-black text-slate-900"><?= CURRENCY_SYMBOL ?><?= number_format($total_revenue, 0) ?></p>
+                <p class="text-2xl font-black text-slate-900"><?= APP_CURRENCY ?><?= number_format($total_revenue, 0) ?></p>
                 <a href="admin_reports.php?report_type=payments" class="text-xs text-emerald-600 font-medium hover:underline">Financial report &rarr;</a>
             </div>
         </div>

@@ -61,7 +61,7 @@ require_once __DIR__ . '/includes/navbar.php';
         <div class="p-6 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
                 <h3 class="font-bold text-slate-900 text-base">Issued Receipts (<?= $total_receipts ?> Records)</h3>
-                <p class="text-xs text-slate-500 mt-0.5">Total Amount: <strong class="text-emerald-600"><?= CURRENCY_SYMBOL ?><?= number_format($total_collected, 2) ?></strong></p>
+                <p class="text-xs text-slate-500 mt-0.5">Total Amount: <strong class="text-emerald-600"><?= APP_CURRENCY ?><?= number_format($total_collected, 2) ?></strong></p>
             </div>
 
             <!-- Search Form -->
@@ -111,7 +111,7 @@ require_once __DIR__ . '/includes/navbar.php';
                                     <p class="text-[10px] text-slate-400"><?= htmlspecialchars($p['semester']) ?></p>
                                 </td>
                                 <td class="px-6 py-4 font-bold text-emerald-600">
-                                    <?= CURRENCY_SYMBOL ?><?= number_format($p['amount'], 2) ?>
+                                    <?= APP_CURRENCY ?><?= number_format($p['amount'], 2) ?>
                                 </td>
                                 <td class="px-6 py-4 text-slate-700">
                                     <p class="font-medium"><?= htmlspecialchars($p['payment_mode']) ?></p>

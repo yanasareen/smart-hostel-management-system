@@ -63,7 +63,7 @@ require_once __DIR__ . '/includes/navbar.php';
             </div>
             <div>
                 <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Total Fees Cleared</span>
-                <p class="text-2xl font-black text-slate-900"><?= CURRENCY_SYMBOL ?><?= number_format($total_paid, 2) ?></p>
+                <p class="text-2xl font-black text-slate-900"><?= APP_CURRENCY ?><?= number_format($total_paid, 2) ?></p>
                 <span class="text-xs text-emerald-600 font-medium"><?= count($my_payments) ?> Verified Payment(s)</span>
             </div>
         </div>
@@ -74,7 +74,7 @@ require_once __DIR__ . '/includes/navbar.php';
             </div>
             <div>
                 <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Semester Assessment</span>
-                <p class="text-2xl font-black text-blue-600"><?= CURRENCY_SYMBOL ?><?= number_format($semester_fee, 2) ?></p>
+                <p class="text-2xl font-black text-blue-600"><?= APP_CURRENCY ?><?= number_format($semester_fee, 2) ?></p>
                 <span class="text-xs text-slate-500"><?= htmlspecialchars($student['room_type'] ?: 'Standard Double') ?></span>
             </div>
         </div>
@@ -125,7 +125,7 @@ require_once __DIR__ . '/includes/navbar.php';
                                     <p class="text-[10px] text-slate-400"><?= htmlspecialchars($p['semester']) ?></p>
                                 </td>
                                 <td class="px-6 py-4 font-bold text-slate-900">
-                                    <?= CURRENCY_SYMBOL ?><?= number_format($p['amount'], 2) ?>
+                                    <?= APP_CURRENCY ?><?= number_format($p['amount'], 2) ?>
                                 </td>
                                 <td class="px-6 py-4 text-slate-700">
                                     <?= htmlspecialchars($p['payment_mode']) ?>
