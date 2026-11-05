@@ -1,5 +1,12 @@
 # Smart Hostel Complaint Management System (v1.0)
 
+[![Live Demo](https://img.shields.io/badge/Live_Website-smart--hostel-00C7B7?style=for-the-badge&logo=render&logoColor=white)](https://smart-hostel-management-system-h0iw.onrender.com)
+[![PHP](https://img.shields.io/badge/PHP-8.2-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://www.php.net/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)](https://www.sqlite.org/)
+
+> 🌐 **Live Website Link**: **[https://smart-hostel-management-system-h0iw.onrender.com](https://smart-hostel-management-system-h0iw.onrender.com)**
+
 **Software Requirements Specification (SRS) Implementation**  
 **Software Engineering Laboratory Project**  
 **Student Developer:** Yana Sareen  
